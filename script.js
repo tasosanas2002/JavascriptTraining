@@ -15,4 +15,12 @@ else if (operator === "-")
     result = num1 / num2;
 }
 
+
+if (typeof num1 === "string" || typeof num2 === "string" || operator === Number) {
+    alert("Error: Provide correct inputt.");
+    throw new Error("Invalid input type.");
+}
 alert("Result: " + result);
+
+
+document.getElementById("content").innerText = +result;
