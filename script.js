@@ -53,8 +53,28 @@
 //     console.log("Animal at index " + i + ": " + animals[i]);
 // }
 
-//Reverse Iteration
+// //Reverse Iteration
 
-for (let i = animals.length - 1; i >= 0; i--) {
-    console.log("Animal at index " + i + ": " + animals[i]);
-}
+// for (let i = animals.length - 1; i >= 0; i--) {
+//     console.log("Animal at index " + i + ": " + animals[i]);
+// }
+
+
+// Exercise 3: Standard For Loops
+// Counting from 1 to 10
+
+// for (let i = 1; i <= 10; i++) {
+//     console.log("the value of i is: " + i);
+//     for (let j = 1; j <= 20; j += 2) {
+//         console.log("the value of j is: " + j);
+//     }
+//     for(let k = 100; k>=0; k-=10){
+//         console.log("the value of k is: " + k); 
+//     }
+//     for(let m=10; m<=1000; m*=10){
+//         console.log("the value of m is: " + m); 
+//     }
+// }
+
+
+
