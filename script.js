@@ -115,21 +115,90 @@
 //     console.log("Current total: " + total); 
 // }
 
-const items = [
-    {name:"iphone", price:999, quantity:2},
-    {name:"samsung", price:899, quantity:3},
-    {name:"iphone pro", price:799, quantity:5},
-    {name:"iovo pro", price:799, quantity:5},
-    {name:"ier", price:799, quantity:5},
-    {name:"oneplus", price:699, quantity:4}
-];
+// const items = [
+//     {name:"iphone", price:999, quantity:2},
+//     {name:"samsung", price:899, quantity:3},
+//     {name:"iphone pro", price:799, quantity:5},
+//     {name:"iovo pro", price:799, quantity:5},
+//     {name:"ier", price:799, quantity:5},
+//     {name:"oneplus", price:699, quantity:4}
+// ];
 
-// Ask user for input
-const searchTerm = prompt("Enter the product name to search for:");
+// // Ask user for input
+// const searchTerm = prompt("Enter the product name to search for:");
 
-// Loop through items and check if name starts with input
-for (let i = 0; i < items.length; i++) {
-    if (items[i].name.toLowerCase().startsWith(searchTerm.toLowerCase())) {
-        console.log(items[i].name);
-    }
+// // Loop through items and check if name starts with input
+// for (let i = 0; i < items.length; i++) {
+//     if (items[i].name.toLowerCase().startsWith(searchTerm.toLowerCase())) {
+//         console.log(items[i].name);
+//     }
+// }
+
+
+
+// Sum of Numbers
+// 1. Write a program using a for loop to calculate the sum of all numbers from 1 to a
+// user-input value (e.g., 1 to N).
+// 2. Add a while loop version of the same task for comparison.
+
+// Data Search
+// 1. Use a for loop to search for a specific number in a list. Example list:
+// numbers = [10, 20, 30, 40, 50, 60]
+// ○ Prompt the user for a number to search.
+// ○ Print a message if the number is found or not.
+// 2. Convert the above logic into a while loop version.
+
+// const numbers = [10, 20, 30, 40, 50, 60];
+
+// // Ask the user once
+// const answer = Number(prompt("Search a number:"));
+
+// let found = false; // flag to track if number is found
+
+// for (let i = 0; i < numbers.length; i++) {
+//     if (numbers[i] === answer) {
+//         found = true;
+//         break; // stop loop once found
+//     }
+// }
+
+// if (found) {
+//     console.log("This number exists!");
+// } else {
+//     console.log("This number does not exist.");
+// }
+
+
+
+
+
+
+
+// Grading System
+// Write a program that takes a student's marks as input and displays their grade:
+// ● 90 and above: "A"
+// ● 80 to 89: "B"
+// ● 70 to 79: "C"
+// ● Below 70: "Fail"
+
+const grade = Number(prompt("Enter your grade"));
+
+if(grade >= 90){
+    console.log("A");
+    
 }
+
+if(grade >80 && grade <90){
+    console.log("B");
+}
+
+if(grade >=70 && grade <80){
+    console.log("C");
+}
+
+if(grade<70 ){
+    console.log("Fail")
+}
+
+
+
