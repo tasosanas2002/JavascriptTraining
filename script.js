@@ -181,24 +181,44 @@
 // ● 70 to 79: "C"
 // ● Below 70: "Fail"
 
-const grade = Number(prompt("Enter your grade"));
+// const grade = Number(prompt("Enter your grade"));
 
-if(grade >= 90){
-    console.log("A");
+// if(grade >= 90){
+//     console.log("A");
+    
+// }
+
+// if(grade >80 && grade <90){
+//     console.log("B");
+// }
+
+// if(grade >=70 && grade <80){
+//     console.log("C");
+// }
+
+// if(grade<70 ){
+//     console.log("Fail")
+// }
+
+// 2026 FIRST WEEK
+
+// function Age(CurrentYear, BirthYear){
+//     return CurrentYear - BirthYear;
+    
+// }
+// console.log("Your age is: " + Age(2026,2002));
+
+// function NumberAddition(num1, num2){
+//     return num1 + num2;
+// }
+// console.log("The sum is: " + NumberAddition(5,10));
+function Question(){
+    const answer = prompt("whats the division 1 / 1");
+    if(answer.toLowerCase() === ""){
+        alert("Correct!");
+    } else {
+        alert("Incorrect. The correct answer is Stockholm.");
+    }
+
     
 }
-
-if(grade >80 && grade <90){
-    console.log("B");
-}
-
-if(grade >=70 && grade <80){
-    console.log("C");
-}
-
-if(grade<70 ){
-    console.log("Fail")
-}
-
-
-
