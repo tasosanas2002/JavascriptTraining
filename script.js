@@ -185,7 +185,7 @@
 
 // if(grade >= 90){
 //     console.log("A");
-    
+
 // }
 
 // if(grade >80 && grade <90){
@@ -204,7 +204,7 @@
 
 // function Age(CurrentYear, BirthYear){
 //     return CurrentYear - BirthYear;
-    
+
 // }
 // console.log("Your age is: " + Age(2026,2002));
 
@@ -212,13 +212,124 @@
 //     return num1 + num2;
 // }
 // console.log("The sum is: " + NumberAddition(5,10));
-function Question(){
-    const answer = prompt("whats the division 1 / 1");
-    if(answer.toLowerCase() === ""){
-        alert("Correct!");
-    } else {
-        alert("Incorrect. The correct answer is Stockholm.");
-    }
+// function Question(){
+//     const answer = prompt("whats the division 1 / 1");
+//     if(answer.toLowerCase() === ""){
+//         alert("Correct!");
+//     } else {
+//         alert("Incorrect. The correct answer is Stockholm.");
+//     }
 
-    
-}
+
+// }
+
+// Odd or Even Checker
+
+// function isEven(number){
+
+//     if(number % 2 === 0){
+//         return console.log("is Even");
+//     } else {
+//         return console.log("is Odd");
+//     }
+
+// }
+
+// console.log(isEven(5));
+
+
+// function addTwoNumbers(num1, num2){
+//     return num1 + num2;
+
+// }
+
+// addTwoNumbers();
+// alert("The sum is: " + addTwoNumbers(35,10));
+
+// function checkPasswordStrength(password) {
+
+
+//     if (password.length < 6) {
+//         console.log("Weak");
+//     } else if (password.length <= 10) {
+//         console.log("Moderate");
+//     } else {
+//         console.log("Strong");
+//     }
+// }
+
+// checkPasswordStrength("tzitzi");
+
+// function countCharacters(str) {
+//     console.log("The length of the string is: " + str.length);
+//     replacedStr = str.replace(/ /g, '');
+//     console.log("The length without spaces is: " + replacedStr.length);
+// }
+// countCharacters("hello world");
+
+// Function to remove duplicate values from an array
+// function removeDuplicates(arr) {
+//     return arr.filter((item, index) => {
+//         return arr.indexOf(item) === index;
+//     });
+// }
+
+// let numberArray = [1, 2, 3, 3, 4, 5];
+// let uniqueArray = removeDuplicates(numberArray);
+
+
+
+// console.log("Original Array:", numberArray);
+// console.log("Array without duplicates:", uniqueArray);
+
+// function countEvenandOdd(arr) {
+//     let evens = [];
+//     let odds = [];
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] % 2 === 0) {
+//             evens.push(arr[i]);
+//         } else {
+//             odds.push(arr[i]);
+//         }
+//     }
+
+//     return {
+//         evens: evens,
+//         odds: odds
+//     };
+// }
+// let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let result = countEvenandOdd(numbers);
+// console.log("Even numbers:", result.evens);
+// console.log("Odd numbers:", result.odds);
+
+
+// function countNumbers(arr) {
+//     let positives = [];
+//     let negatives = [];
+//     let zeros = [];
+
+//     for (let i = 0; i < arr.length; i++) {
+//         if (arr[i] > 0) {
+//             positives.push(arr[i]);
+//         } else if (arr[i] < 0) {
+//             negatives.push(arr[i]);
+//         }
+//         else {
+//             zeros.push(arr[i]);
+//         }
+//     }
+
+//     return {
+//         positives: positives,
+//         negatives: negatives,
+//         zeros: zeros
+//     };
+// }
+// let numbers = [10, -5, 3, -1, 0, 7, -8, 2];
+// let result = countNumbers(numbers);
+// console.log("Positive numbers:", result.positives);
+// console.log("Negative numbers:", result.negatives);
+// console.log("Zeros:", result.zeros);
+
