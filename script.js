@@ -333,3 +333,16 @@
 // console.log("Negative numbers:", result.negatives);
 // console.log("Zeros:", result.zeros);
 
+function checkUsername(name) {
+    if (name.includes(" ")) {
+        return "Contains spaces";
+    } else if (name.length < 5) {
+        return "Too short";
+    } else {
+        return "Valid username";
+    }
+}
+
+console.log(checkUsername("ta"));          
+console.log(checkUsername("user name"));   
+
