@@ -346,13 +346,41 @@
 // console.log(checkUsername("ta"));          
 // console.log(checkUsername("user name"));   
 
-const array = [1,23]
+// const array = [1,23]
 
-let arrayLength = array.length
+// let arrayLength = array.length
 
-array.push(45,56)
+// array.push(45,56)
 
 
-arrayLength = array.length
-console.log(arrayLength)
-console.log(array[0])
+// arrayLength = array.length
+// console.log(arrayLength)
+// console.log(array[0])
+
+const user = [{
+    id:1,
+    name:"Tasos",
+    surname:"Anas"
+},{
+    id:2,
+    name:"Maria",
+    surname:"Pap"
+},{
+    id:3,
+    name:"Kostas",
+    surname:"Nik"
+}];
+
+function deleteUserById(id){
+    for (let i = 0; i<user.length; i++){
+        if(user[i].id == id){
+            user.splice(i,1);
+            break;
+        }   
+    }
+    return user
+}
+
+deleteUserById(2);
+
+console.log(user);
