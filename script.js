@@ -3,6 +3,8 @@
 // let num2 = Number(prompt("Enter second number:"));
 // let operator = prompt("Enter operator (+, -, *, /):");
 
+const { useCallback } = require("react");
+
 // if (operator === "+") {
 //     result = num1 + num2;
 // } 
@@ -357,30 +359,102 @@
 // console.log(arrayLength)
 // console.log(array[0])
 
-const user = [{
-    id:1,
-    name:"Tasos",
-    surname:"Anas"
-},{
-    id:2,
-    name:"Maria",
-    surname:"Pap"
-},{
-    id:3,
-    name:"Kostas",
-    surname:"Nik"
-}];
+// const user = [{
+//     id:1,
+//     name:"Tasos",
+//     surname:"Anas"
+// },{
+//     id:2,
+//     name:"Maria",
+//     surname:"Pap"
+// },{
+//     id:3,
+//     name:"Kostas",
+//     surname:"Nik"
+// }];
 
-function deleteUserById(id){
-    for (let i = 0; i<user.length; i++){
-        if(user[i].id == id){
-            user.splice(i,1);
-            break;
-        }   
-    }
-    return user
+// function deleteUserById(id){
+//     for (let i = 0; i<user.length; i++){
+//         if(user[i].id == id){
+//             user.splice(i,1);
+//             break;
+//         }   
+//     }
+//     return user
+// }
+
+// deleteUserById(2);
+
+// console.log(user);
+
+
+
+// function processData(numbers, callback) {
+// const items = [ ]
+//   for (let i = 0; i < numbers.length; i++) {
+//     callback(numbers[i]);       
+//   }
+// }
+
+// // Example Usage
+// processData([1, 2, 3, 4], function(num) {
+//   console.log(num * 2); // Should log 2, 4, 6, 8
+// });
+
+
+// function processData(numbers, callback) {
+//   for (let i = 0; i < numbers.length; i++) {
+//     callback(numbers[i]);
+//   }
+// }
+
+// processData([10, 20, 30], function(x) {
+//   console.log(x*3);
+// });
+
+
+
+// function transformArray(array,callback){
+//     const newArray= [];
+// for (let i = 0; i< array.length; i++){
+//    newArray.push(callback(array[i]))
+// }
+// return newArray;
+// }
+// const result = transformArray([10,20,30],function(num){
+//     return num + 5
+  
+  
+// })
+
+//  console.log(result);
+
+
+// function chainCallbacks(value)
+
+// function chainCallbacks(value, callbacks) {
+//   let result = value;
+//   for (let i = 0; i < callbacks.length; i++) {
+//     result = callbacks[i](result);
+//   }
+//   return result;
+// }
+
+// const result = chainCallbacks(5, [
+//   function(x) { return x + 3; },
+//   function(x) { return x * 2; },
+//   function(x) { return x - 4; }
+// ]);
+// console.log(result); 
+
+function squareNumbers(numbers, Callback){
+let newArray = [];
+for (let i =0; i< numbers.length; i++){
+    newArray.push(Callback (numbers[i]));
 }
 
-deleteUserById(2);
-
-console.log(user);
+const result = squareNumbers([1,2,3,4],function(num){
+    return num ^ num;
+});
+console.log(result)
+}
