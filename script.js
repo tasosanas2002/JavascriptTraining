@@ -3,7 +3,7 @@
 // let num2 = Number(prompt("Enter second number:"));
 // let operator = prompt("Enter operator (+, -, *, /):");
 
-const { useCallback } = require("react");
+// const { useCallback } = require("react");
 
 // if (operator === "+") {
 //     result = num1 + num2;
@@ -458,3 +458,82 @@ const { useCallback } = require("react");
 // });
 // console.log(result)
 // }
+
+
+
+//     function processData(numbers, callback) {
+//   for (let i = 0; i < numbers.length; i++) {
+//     callback(numbers[i]);
+//   }
+// }
+
+// processData([10, 20, 30], function(x) {
+//   console.log(x*3);
+// });
+
+
+// function transformArray(array,callback){
+//     const newArray= [];
+// for (let i = 0; i<array.length; i++){
+//     newArray.push(callback(array[i]))
+// }
+// return newArray;
+// }
+
+// const result = transformArray([5,10,15,20], function(x){
+//     return x * 5;
+    
+// });
+// console.log(result);
+
+
+//4 EXCERCSE
+// function squareNumbers(array, callback) {
+//     const newArray = [];
+
+//     for (let i = 0; i < array.length; i++) {
+//         newArray.push(callback(array[i]));
+//     }
+
+//     return newArray;
+// }
+
+// const result = squareNumbers([5, 10, 15], function (x) {
+//     return x ** 2;
+// });
+
+// console.log(result);
+
+// function filterAdults(ages, callback) {
+//     const result = [];
+
+//     for (let i = 0; i < ages.length; i++) {
+//         if (callback(ages[i])) {
+//             result.push(ages[i]);
+//         }
+//     }
+
+//     return result;
+// }
+
+// const adults = filterAdults([5, 15, 34, 56], function (num) {
+//     return num >= 18;
+// });
+
+// console.log(adults); // [34, 56]
+
+function sumArray(array, callback) {
+    let total = 0;
+
+    for (let i = 0; i < array.length; i++) {
+        total += callback(array[i]);
+    }
+
+    return total;
+}
+
+const result = sumArray([10, 20, 30], function (x) {
+    return x;
+});
+
+console.log(result); 
