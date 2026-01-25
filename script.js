@@ -447,14 +447,14 @@ const { useCallback } = require("react");
 // ]);
 // console.log(result); 
 
-function squareNumbers(numbers, Callback){
-let newArray = [];
-for (let i =0; i< numbers.length; i++){
-    newArray.push(Callback (numbers[i]));
-}
+// function squareNumbers(numbers, Callback){
+// let newArray = [];
+// for (let i =0; i< numbers.length; i++){
+//     newArray.push(Callback (numbers[i]));
+// }
 
-const result = squareNumbers([1,2,3,4],function(num){
-    return num ^ num;
-});
-console.log(result)
-}
+// const result = squareNumbers([1,2,3,4],function(num){
+//     return num ^ num;
+// });
+// console.log(result)
+// }
