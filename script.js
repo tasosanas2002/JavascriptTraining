@@ -523,10 +523,10 @@
 // console.log(adults); // [34, 56]
 
 function sumArray(array, callback) {
-    let total = 0;
+    let total = [];
 
     for (let i = 0; i < array.length; i++) {
-        total += callback(array[i]);
+        total.push(callback(array[i]));
     }
 
     return total;
