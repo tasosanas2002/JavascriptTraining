@@ -488,19 +488,19 @@
 
 
 //4 EXCERCSE
-// function squareNumbers(array, callback) {
-//     const newArray = [];
+function squareNumbers(array, callback) {
+    const newArray = [];
 
-//     for (let i = 0; i < array.length; i++) {
-//         newArray.push(callback(array[i]));
-//     }
+    for (let i = 0; i < array.length; i++) {
+        newArray.push(callback(array[i]));
+    }
 
-//     return newArray;
-// }
+    return newArray;
+}
 
-// const result = squareNumbers([5, 10, 15], function (x) {
-//     return x ** 2;
-// });
+const result = squareNumbers([5, 10, 15], function (x) {
+    return x ** 2;
+});
 
 // console.log(result);
 
