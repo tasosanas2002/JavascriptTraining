@@ -488,52 +488,86 @@
 
 
 //4 EXCERCSE
-function squareNumbers(array, callback) {
-    const newArray = [];
+// function squareNumbers(array, callback) {
+//     const newArray = [];
 
-    for (let i = 0; i < array.length; i++) {
-        newArray.push(callback(array[i]));
-    }
-
-    return newArray;
-}
-
-const result = squareNumbers([5, 10, 15], function (x) {
-    return x ** 2;
-});
-
-// console.log(result);
-
-// function filterAdults(ages, callback) {
-//     const result = [];
-
-//     for (let i = 0; i < ages.length; i++) {
-//         if (callback(ages[i])) {
-//             result.push(ages[i]);
-//         }
+//     for (let i = 0; i < array.length; i++) {
+//         newArray.push(callback(array[i]));
 //     }
 
-//     return result;
+//     return newArray;
 // }
 
-// const adults = filterAdults([5, 15, 34, 56], function (num) {
-//     return num >= 18;
+// const result = squareNumbers([5, 10, 15], function (x) {
+//     return x ** 2;
 // });
 
-// console.log(adults); // [34, 56]
+// // console.log(result);
 
-function sumArray(array, callback) {
-    let total = [];
+// // function filterAdults(ages, callback) {
+// //     const result = [];
 
-    for (let i = 0; i < array.length; i++) {
-        total.push(callback(array[i]));
+// //     for (let i = 0; i < ages.length; i++) {
+// //         if (callback(ages[i])) {
+// //             result.push(ages[i]);
+// //         }
+// //     }
+
+// //     return result;
+// // }
+
+// // const adults = filterAdults([5, 15, 34, 56], function (num) {
+// //     return num >= 18;
+// // });
+
+// // console.log(adults); // [34, 56]
+
+// function sumArray(array, callback) {
+//     let total = [];
+
+//     for (let i = 0; i < array.length; i++) {
+//         total.push(callback(array[i]));
+//     }
+
+//     return total;
+// }
+
+// const result = sumArray([10, 20, 30], function (x) {
+//     return x;
+// });
+
+// console.log(result); 
+
+let tasks = [
+    {
+        id: 1,
+        title: "Buy Groceries",
+        description: "Buy milk, eggs, and bread.",
+        priority: "High",
+        dueDate: "2024-06-20",
+        isComplete: false
+    }
+];
+let taskIdCounter = 1;  
+
+/**
+ * Function to add a new task.
+ * @param {string} title - The task title.
+ * @param {string} description - The task description.
+ * @param {string} priority - The priority of the task (High, Medium, Low).
+ * @param {string} dueDate - The due date of the task (format: YYYY-MM-DD).
+ */
+function addTask(title, description, priority, dueDate) {
+    if (!title || !description || !priority || !dueDate) {
+        console.log("All fields (title, description, priority, dueDate) are required to add a task.");
+        return;
     }
 
-    return total;
-}
-
-const result = sumArray([10, 20, 30], function (x) {
-    return x;
-});
-
-console.log(result); 
+tasks.push({
+    title: title,
+    description: description,
+    priority: priority,
+    dueDate: dueDate,
+    isComplete: false,
+    id: ++taskIdCounter
+})
