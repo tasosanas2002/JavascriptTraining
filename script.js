@@ -571,5 +571,54 @@
 //     isComplete: false,
 //     id: ++taskIdCounter
 // })
-const element = document.getElementById("demo");
-element.innerHTML = "The content has been changed by script.js";
+// const element = document.getElementById("demo");
+// element.innerHTML = "The content has been changed by script.js";
+
+const elements = document.getElementsByClassName("highlight");
+for (let i = 0; i < elements.length; i++) {
+    console.log(elements[i].textContent = "Changed by script.js");
+}
+
+const newLi = document.createElement("li");
+newLi.textContent = "New Item added by script.js";
+document.getElementById("myList").appendChild(newLi);
+
+const posts = [
+  {
+    title: "First Post",
+    author: "Alice",
+    content: "This is the first post"
+  },
+  {
+    title: "Second Post",
+    author: "Bob",
+    content: "This is the second post"
+  },
+  {
+    title: "Third Post",
+    author: "Charlie",
+    content: "This is the third post"
+  }
+];
+const container = document.getElementById("titles");
+
+for (let i = 0; i < posts.length; i++) {
+  const titleElement = document.createElement("h3");
+  titleElement.textContent = posts[i].title;
+  container.appendChild(titleElement);
+}
+
+const mainDiv = document.getElementById("main");
+
+for (let i = 1; i <= 5; i++) {
+  const newDiv = document.createElement("div");
+  newDiv.textContent = "Child div " + i;
+  mainDiv.appendChild(newDiv);
+}
+const image = document.getElementById("productImage");
+
+image.setAttribute("src", "https://via.placeholder.com/150");
+image.setAttribute("alt", "Placeholder Image");
+
+const submitButton = document.getElementById("submitButton");
+submitButton.removeAttribute("disabled");
