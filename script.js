@@ -610,10 +610,14 @@ for (let i = 0; i < posts.length; i++) {
 
 const mainDiv = document.getElementById("main");
 
-for (let i = 1; i <= 5; i++) {
-  const newDiv = document.createElement("div");
-  newDiv.textContent = "Child div " + i;
-  mainDiv.appendChild(newDiv);
+if (mainDiv) {
+  for (let i = 1; i <= 5; i++) {
+    const newDiv = document.createElement("div");
+    newDiv.textContent = "Child div " + i;
+    mainDiv.appendChild(newDiv);
+  }
+} else {
+  console.warn("Missing element: #main");
 }
 const image = document.getElementById("productImage");
 
@@ -622,3 +626,22 @@ image.setAttribute("alt", "Placeholder Image");
 
 const submitButton = document.getElementById("submitButton");
 submitButton.removeAttribute("disabled");
+
+
+
+const btn = document.getElementById("myBtn");
+btn.addEventListener("click", function() {
+    console.log("Button was clicked!");
+});
+
+window.addEventListener("resize", () => {
+    const w = window.innerWidth;
+    const h = window.innerHeight;
+    console.log("Window resized to: " + w + "x" + h);
+});
+
+const input = document.querySelector("#name");
+input.addEventListener('input', (e)=>{
+    const val=e.target.value;
+    console.log("Current input value: " + val);
+});
