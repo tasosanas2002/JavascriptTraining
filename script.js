@@ -731,3 +731,5 @@ pad.addEventListener("click", () => console.log("Pad clicked!"));
 pad.addEventListener("dblclick", () => console.log("Pad double-clicked!"));
 pad.addEventListener("mouseenter", () => console.log("Mouse entered pad!"));
 pad.addEventListener("mouseleave", () => console.log("Mouse left pad!"));
+
+// const input = document.getElementById("input");
