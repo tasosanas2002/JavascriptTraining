@@ -733,3 +733,10 @@ pad.addEventListener("mouseenter", () => console.log("Mouse entered pad!"));
 pad.addEventListener("mouseleave", () => console.log("Mouse left pad!"));
 
 // const input = document.getElementById("input");
+
+const input = document.querySelector("input");
+
+input.addEventListener("keydown", (event) => {
+    console.log("Key down: " + event.key);
+    console.log("Key code: " + event.code);
+});
