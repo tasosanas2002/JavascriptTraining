@@ -629,19 +629,81 @@ submitButton.removeAttribute("disabled");
 
 
 
-const btn = document.getElementById("myBtn");
-btn.addEventListener("click", function() {
-    console.log("Button was clicked!");
+// const btn = document.getElementById("myBtn");
+// btn.addEventListener("click", function() {
+//     console.log("Button was clicked!");
+// });
+
+// window.addEventListener("resize", () => {
+//     const w = window.innerWidth;
+//     const h = window.innerHeight;
+//     console.log("Window resized to: " + w + "x" + h);
+// });
+
+// const input = document.querySelector("#name");
+// input.addEventListener('input', (e)=>{
+//     const val=e.target.value;
+//     console.log("Current input value: " + val);
+// });
+
+const btn = document.getElementById("btn");
+const log = document.getElementById("log");
+
+function write(msg){
+    log.textContent += msg + "\n";
+    log.scrollTop = log.scrollHeight;
+}
+
+
+btn.addEventListener("click", () => {
+    write("Button clicked!");
+});
+btn.removeEventListener("click", () => {
+    write("Button clicked!");
 });
 
-window.addEventListener("resize", () => {
-    const w = window.innerWidth;
-    const h = window.innerHeight;
-    console.log("Window resized to: " + w + "x" + h);
+
+const targetBtn = document.getElementById("targetBtn");
+const addBtn = document.getElementById("addBtn");
+const deleteBtn = document.getElementById("deleteBtn");
+
+function onTargetClick() {
+  write("Target clicked!");
+}
+
+if (addBtn && deleteBtn && targetBtn) {
+  addBtn.addEventListener("click", () => {
+    targetBtn.addEventListener("click", onTargetClick);
+    write("Listener added.");
+  });
+
+  deleteBtn.addEventListener("click", () => {
+    targetBtn.removeEventListener("click", onTargetClick);
+    write("Listener removed.");
+  });
+} else {
+  console.warn("Missing one of: #addBtn, #deleteBtn, #targetBtn");
+}
+
+const countDisplay = document.getElementById("countDisplay");
+const counterBtn = document.getElementById("counter");
+let count = 0;
+
+if (counterBtn && countDisplay) {
+  counterBtn.addEventListener("click", () => {
+    count++;
+    countDisplay.textContent = count;
+  });
+}
+
+const changeColorBtn = document.getElementById("changeColorBtn");
+const box = document.getElementById("box");
+
+changeColorBtn.addEventListener("click", (event) => {
+    const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+    box.style.backgroundColor = randomColor;
+    // alert("It works");
+    console.log(event);
 });
 
-const input = document.querySelector("#name");
-input.addEventListener('input', (e)=>{
-    const val=e.target.value;
-    console.log("Current input value: " + val);
-});
+
