@@ -706,4 +706,28 @@ changeColorBtn.addEventListener("click", (event) => {
     console.log(event);
 });
 
+function write(msg){
+    log.textContent += msg + "\n";
+    log.scrollTop = log.scrollHeight;
+}
 
+function write(msg){
+    log.textContent += msg + "\n";
+    log.scrollTop = log.scrollHeight;
+}
+
+parent.addEventListener("click", function(event) {
+   write("event.target: " + event.target.id);
+   write("event.currentTarget: " + event.currentTarget.id);
+});
+
+const area = document.getElementById("area");
+area.addEventListener("mousemove", (event) => {
+    area.textContent = `X: ${event.clientX}, Y: ${event.clientY}`;
+});
+
+const pad = document.getElementById("pad");
+pad.addEventListener("click", () => console.log("Pad clicked!"));
+pad.addEventListener("dblclick", () => console.log("Pad double-clicked!"));
+pad.addEventListener("mouseenter", () => console.log("Mouse entered pad!"));
+pad.addEventListener("mouseleave", () => console.log("Mouse left pad!"));
