@@ -760,9 +760,50 @@ passwordInput.addEventListener("input", function() {
 });
 
 
-const array = ["gigi", "titi", "toto", "tata", "tutu"];
-const randomIndex = Math.floor(Math.random() * array.length);
-const randomWord = array[randomIndex];
-const randomDiv = document.getElementById("random");
-randomDiv.textContent += randomWord;
+const array = ["Greece", "Malta", "Ireland", "Egypt", "Russia", "Spain", "Italy", "France", "Germany", "Portugal"];
+const wordEl = document.getElementById("word");
+const typeEl = document.getElementById("type");
+const scoreEl = document.getElementById("score");
 
+let score = 0;
+let currentWord = "";
+
+function newWord() {
+    const randomIndex = Math.floor(Math.random() * array.length);
+    currentWord = array[randomIndex];
+    wordEl.textContent = currentWord;
+    typeEl.value = "";
+}
+
+typeEl.addEventListener("input", function() {
+    if (typeEl.value === currentWord) {
+        score++;
+        scoreEl.textContent = score;
+        newWord();
+    }
+});
+scoreEl.textContent = score;
+newWord();  
+
+const countriesList = document.getElementById("countries");
+
+for (let i = 0; i < array.length; i++) {
+  const li = document.createElement("li");
+  li.textContent = array[i];
+  countriesList.appendChild(li);
+}
+
+
+const widthEl = document.getElementById("width");
+const heightEl = document.getElementById("height");
+
+function updateDimensions() {
+  widthEl.textContent = window.innerWidth;
+  heightEl.textContent = window.innerHeight;
+}
+
+// Update on load
+updateDimensions();
+
+// Update on resize
+window.addEventListener("resize", updateDimensions);
