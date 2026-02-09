@@ -740,3 +740,21 @@ input.addEventListener("keydown", (event) => {
     console.log("Key down: " + event.key);
     console.log("Key code: " + event.code);
 });
+
+const passwordInput = document.getElementById("pwd");
+const message = document.getElementById("msg");
+
+passwordInput.addEventListener("input", function() {
+   const length = passwordInput.value.length;
+   if (length < 6) {
+       message.textContent = "Weak";
+       message.style.color = "red";
+   } else if (length <= 10) {
+       message.textContent = "Moderate";
+       message.style.color = "orange";
+   } else {
+       message.textContent = "Strong";
+       message.style.color = "green";
+   }
+   console.log("Password length: " + length);
+});
