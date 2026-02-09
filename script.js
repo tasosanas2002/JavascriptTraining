@@ -574,172 +574,172 @@
 // const element = document.getElementById("demo");
 // element.innerHTML = "The content has been changed by script.js";
 
-const elements = document.getElementsByClassName("highlight");
-for (let i = 0; i < elements.length; i++) {
-    console.log(elements[i].textContent = "Changed by script.js");
-}
+// const elements = document.getElementsByClassName("highlight");
+// for (let i = 0; i < elements.length; i++) {
+//     console.log(elements[i].textContent = "Changed by script.js");
+// }
 
-const newLi = document.createElement("li");
-newLi.textContent = "New Item added by script.js";
-document.getElementById("myList").appendChild(newLi);
+// const newLi = document.createElement("li");
+// newLi.textContent = "New Item added by script.js";
+// document.getElementById("myList").appendChild(newLi);
 
-const posts = [
-  {
-    title: "First Post",
-    author: "Alice",
-    content: "This is the first post"
-  },
-  {
-    title: "Second Post",
-    author: "Bob",
-    content: "This is the second post"
-  },
-  {
-    title: "Third Post",
-    author: "Charlie",
-    content: "This is the third post"
-  }
-];
-const container = document.getElementById("titles");
+// const posts = [
+//   {
+//     title: "First Post",
+//     author: "Alice",
+//     content: "This is the first post"
+//   },
+//   {
+//     title: "Second Post",
+//     author: "Bob",
+//     content: "This is the second post"
+//   },
+//   {
+//     title: "Third Post",
+//     author: "Charlie",
+//     content: "This is the third post"
+//   }
+// ];
+// const container = document.getElementById("titles");
 
-for (let i = 0; i < posts.length; i++) {
-  const titleElement = document.createElement("h3");
-  titleElement.textContent = posts[i].title;
-  container.appendChild(titleElement);
-}
+// for (let i = 0; i < posts.length; i++) {
+//   const titleElement = document.createElement("h3");
+//   titleElement.textContent = posts[i].title;
+//   container.appendChild(titleElement);
+// }
 
-const mainDiv = document.getElementById("main");
+// const mainDiv = document.getElementById("main");
 
-if (mainDiv) {
-  for (let i = 1; i <= 5; i++) {
-    const newDiv = document.createElement("div");
-    newDiv.textContent = "Child div " + i;
-    mainDiv.appendChild(newDiv);
-  }
-} else {
-  console.warn("Missing element: #main");
-}
-const image = document.getElementById("productImage");
+// if (mainDiv) {
+//   for (let i = 1; i <= 5; i++) {
+//     const newDiv = document.createElement("div");
+//     newDiv.textContent = "Child div " + i;
+//     mainDiv.appendChild(newDiv);
+//   }
+// } else {
+//   console.warn("Missing element: #main");
+// }
+// const image = document.getElementById("productImage");
 
-image.setAttribute("src", "https://via.placeholder.com/150");
-image.setAttribute("alt", "Placeholder Image");
+// image.setAttribute("src", "https://via.placeholder.com/150");
+// image.setAttribute("alt", "Placeholder Image");
 
-const submitButton = document.getElementById("submitButton");
-submitButton.removeAttribute("disabled");
+// const submitButton = document.getElementById("submitButton");
+// submitButton.removeAttribute("disabled");
 
 
 
-// const btn = document.getElementById("myBtn");
-// btn.addEventListener("click", function() {
-//     console.log("Button was clicked!");
+// // const btn = document.getElementById("myBtn");
+// // btn.addEventListener("click", function() {
+// //     console.log("Button was clicked!");
+// // });
+
+// // window.addEventListener("resize", () => {
+// //     const w = window.innerWidth;
+// //     const h = window.innerHeight;
+// //     console.log("Window resized to: " + w + "x" + h);
+// // });
+
+// // const input = document.querySelector("#name");
+// // input.addEventListener('input', (e)=>{
+// //     const val=e.target.value;
+// //     console.log("Current input value: " + val);
+// // });
+
+// const btn = document.getElementById("btn");
+// const log = document.getElementById("log");
+
+// function write(msg){
+//     log.textContent += msg + "\n";
+//     log.scrollTop = log.scrollHeight;
+// }
+
+
+// btn.addEventListener("click", () => {
+//     write("Button clicked!");
+// });
+// btn.removeEventListener("click", () => {
+//     write("Button clicked!");
 // });
 
-// window.addEventListener("resize", () => {
-//     const w = window.innerWidth;
-//     const h = window.innerHeight;
-//     console.log("Window resized to: " + w + "x" + h);
+
+// const targetBtn = document.getElementById("targetBtn");
+// const addBtn = document.getElementById("addBtn");
+// const deleteBtn = document.getElementById("deleteBtn");
+
+// function onTargetClick() {
+//   write("Target clicked!");
+// }
+
+// if (addBtn && deleteBtn && targetBtn) {
+//   addBtn.addEventListener("click", () => {
+//     targetBtn.addEventListener("click", onTargetClick);
+//     write("Listener added.");
+//   });
+
+//   deleteBtn.addEventListener("click", () => {
+//     targetBtn.removeEventListener("click", onTargetClick);
+//     write("Listener removed.");
+//   });
+// } else {
+//   console.warn("Missing one of: #addBtn, #deleteBtn, #targetBtn");
+// }
+
+// const countDisplay = document.getElementById("countDisplay");
+// const counterBtn = document.getElementById("counter");
+// let count = 0;
+
+// if (counterBtn && countDisplay) {
+//   counterBtn.addEventListener("click", () => {
+//     count++;
+//     countDisplay.textContent = count;
+//   });
+// }
+
+// const changeColorBtn = document.getElementById("changeColorBtn");
+// const box = document.getElementById("box");
+
+// changeColorBtn.addEventListener("click", (event) => {
+//     const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+//     box.style.backgroundColor = randomColor;
+//     // alert("It works");
+//     console.log(event);
 // });
 
-// const input = document.querySelector("#name");
-// input.addEventListener('input', (e)=>{
-//     const val=e.target.value;
-//     console.log("Current input value: " + val);
+// function write(msg){
+//     log.textContent += msg + "\n";
+//     log.scrollTop = log.scrollHeight;
+// }
+
+// function write(msg){
+//     log.textContent += msg + "\n";
+//     log.scrollTop = log.scrollHeight;
+// }
+
+// parent.addEventListener("click", function(event) {
+//    write("event.target: " + event.target.id);
+//    write("event.currentTarget: " + event.currentTarget.id);
 // });
 
-const btn = document.getElementById("btn");
-const log = document.getElementById("log");
+// const area = document.getElementById("area");
+// area.addEventListener("mousemove", (event) => {
+//     area.textContent = `X: ${event.clientX}, Y: ${event.clientY}`;
+// });
 
-function write(msg){
-    log.textContent += msg + "\n";
-    log.scrollTop = log.scrollHeight;
-}
+// const pad = document.getElementById("pad");
+// pad.addEventListener("click", () => console.log("Pad clicked!"));
+// pad.addEventListener("dblclick", () => console.log("Pad double-clicked!"));
+// pad.addEventListener("mouseenter", () => console.log("Mouse entered pad!"));
+// pad.addEventListener("mouseleave", () => console.log("Mouse left pad!"));
 
+// // const input = document.getElementById("input");
 
-btn.addEventListener("click", () => {
-    write("Button clicked!");
-});
-btn.removeEventListener("click", () => {
-    write("Button clicked!");
-});
+// const input = document.querySelector("input");
 
-
-const targetBtn = document.getElementById("targetBtn");
-const addBtn = document.getElementById("addBtn");
-const deleteBtn = document.getElementById("deleteBtn");
-
-function onTargetClick() {
-  write("Target clicked!");
-}
-
-if (addBtn && deleteBtn && targetBtn) {
-  addBtn.addEventListener("click", () => {
-    targetBtn.addEventListener("click", onTargetClick);
-    write("Listener added.");
-  });
-
-  deleteBtn.addEventListener("click", () => {
-    targetBtn.removeEventListener("click", onTargetClick);
-    write("Listener removed.");
-  });
-} else {
-  console.warn("Missing one of: #addBtn, #deleteBtn, #targetBtn");
-}
-
-const countDisplay = document.getElementById("countDisplay");
-const counterBtn = document.getElementById("counter");
-let count = 0;
-
-if (counterBtn && countDisplay) {
-  counterBtn.addEventListener("click", () => {
-    count++;
-    countDisplay.textContent = count;
-  });
-}
-
-const changeColorBtn = document.getElementById("changeColorBtn");
-const box = document.getElementById("box");
-
-changeColorBtn.addEventListener("click", (event) => {
-    const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-    box.style.backgroundColor = randomColor;
-    // alert("It works");
-    console.log(event);
-});
-
-function write(msg){
-    log.textContent += msg + "\n";
-    log.scrollTop = log.scrollHeight;
-}
-
-function write(msg){
-    log.textContent += msg + "\n";
-    log.scrollTop = log.scrollHeight;
-}
-
-parent.addEventListener("click", function(event) {
-   write("event.target: " + event.target.id);
-   write("event.currentTarget: " + event.currentTarget.id);
-});
-
-const area = document.getElementById("area");
-area.addEventListener("mousemove", (event) => {
-    area.textContent = `X: ${event.clientX}, Y: ${event.clientY}`;
-});
-
-const pad = document.getElementById("pad");
-pad.addEventListener("click", () => console.log("Pad clicked!"));
-pad.addEventListener("dblclick", () => console.log("Pad double-clicked!"));
-pad.addEventListener("mouseenter", () => console.log("Mouse entered pad!"));
-pad.addEventListener("mouseleave", () => console.log("Mouse left pad!"));
-
-// const input = document.getElementById("input");
-
-const input = document.querySelector("input");
-
-input.addEventListener("keydown", (event) => {
-    console.log("Key down: " + event.key);
-    console.log("Key code: " + event.code);
-});
+// input.addEventListener("keydown", (event) => {
+//     console.log("Key down: " + event.key);
+//     console.log("Key code: " + event.code);
+// });
 
 const passwordInput = document.getElementById("pwd");
 const message = document.getElementById("msg");
@@ -758,3 +758,11 @@ passwordInput.addEventListener("input", function() {
    }
    console.log("Password length: " + length);
 });
+
+
+const array = ["gigi", "titi", "toto", "tata", "tutu"];
+const randomIndex = Math.floor(Math.random() * array.length);
+const randomWord = array[randomIndex];
+const randomDiv = document.getElementById("random");
+randomDiv.textContent += randomWord;
+
