@@ -81,6 +81,7 @@ BAR
 
 <p>Score: <span id="score">0</span></p>
 
+<button id="btn">Click Me</button>
 
 <h3>Country List:</h3>
 <ul id="countries"></ul>
@@ -92,3 +93,11 @@ BAR
 
 </body>
 </html>
+
+<script>
+window.addEventListener("wheel", (e) =>{
+    console.log("wheel fired");
+    e.preventDefault();
+}, {passive: false}
+);
+</script>

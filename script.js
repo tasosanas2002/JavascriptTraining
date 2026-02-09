@@ -794,17 +794,19 @@ for (let i = 0; i < array.length; i++) {
 }
 
 
-// const widthEl = document.getElementById("width");
-// const heightEl = document.getElementById("height");
+const scrollEl = document.getElementById("scroll");
+const bar = document.getElementById("bar");
 
-// function updateDimensions() {
-//   widthEl.textContent = window.innerWidth;
-//   heightEl.textContent = window.innerHeight;
-// }
+window.addEventListener("scroll", function() {
+    const y = window.scrollY;
+    console.log("Scroll Y: " + y);
+    scrollEl.textContent = "Scroll Y: " + y;
 
-// // Update on load
-// updateDimensions();
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = (y / max) * 100;
+    bar.style.width = percent + "%";
+});
 
-// // Update on resize
-// window.addEventListener("resize", updateDimensions);
-
+btn.addEventListener("click", () => {
+    alert("Button clicked!");
+}, { once: true });
