@@ -794,16 +794,17 @@ for (let i = 0; i < array.length; i++) {
 }
 
 
-const widthEl = document.getElementById("width");
-const heightEl = document.getElementById("height");
+// const widthEl = document.getElementById("width");
+// const heightEl = document.getElementById("height");
 
-function updateDimensions() {
-  widthEl.textContent = window.innerWidth;
-  heightEl.textContent = window.innerHeight;
-}
+// function updateDimensions() {
+//   widthEl.textContent = window.innerWidth;
+//   heightEl.textContent = window.innerHeight;
+// }
 
-// Update on load
-updateDimensions();
+// // Update on load
+// updateDimensions();
 
-// Update on resize
-window.addEventListener("resize", updateDimensions);
+// // Update on resize
+// window.addEventListener("resize", updateDimensions);
+
