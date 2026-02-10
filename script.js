@@ -810,3 +810,27 @@ window.addEventListener("scroll", function() {
 btn.addEventListener("click", () => {
     alert("Button clicked!");
 }, { once: true });
+
+ const form = document.getElementById("myForm");
+  const emailInput = document.getElementById("email");
+  const websiteInput = document.getElementById("website");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault(); // stops page refresh
+
+    console.log("Current input value: " + emailInput.value);
+    console.log("Current website input value: " + websiteInput.value);
+  });
+
+  const pw = document.getElementById("pw");
+  const btn = document.getElementById("submitBtn");
+
+  btn.addEventListener("click", (e) => {
+if (pw.value.length < 6) {
+    alert("Password must be at least 6 characters long.");
+    e.preventDefault(); // prevent form submission
+}
+else{
+    alert("Form submitted successfully!");
+}
+  });
