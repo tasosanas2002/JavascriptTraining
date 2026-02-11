@@ -741,108 +741,109 @@
 //     console.log("Key code: " + event.code);
 // });
 
-const passwordInput = document.getElementById("pwd");
-const message = document.getElementById("msg");
+// const passwordInput = document.getElementById("pwd");
+// const message = document.getElementById("msg");
 
-passwordInput.addEventListener("input", function() {
-   const length = passwordInput.value.length;
-   if (length < 6) {
-       message.textContent = "Weak";
-       message.style.color = "red";
-   } else if (length <= 10) {
-       message.textContent = "Moderate";
-       message.style.color = "orange";
-   } else {
-       message.textContent = "Strong";
-       message.style.color = "green";
-   }
-   console.log("Password length: " + length);
+// passwordInput.addEventListener("input", function() {
+//    const length = passwordInput.value.length;
+//    if (length < 6) {
+//        message.textContent = "Weak";
+//        message.style.color = "red";
+//    } else if (length <= 10) {
+//        message.textContent = "Moderate";
+//        message.style.color = "orange";
+//    } else {
+//        message.textContent = "Strong";
+//        message.style.color = "green";
+//    }
+//    console.log("Password length: " + length);
+// });
+
+
+// const array = ["Greece", "Malta", "Ireland", "Egypt", "Russia", "Spain", "Italy", "France", "Germany", "Portugal"];
+// const wordEl = document.getElementById("word");
+// const typeEl = document.getElementById("type");
+// const scoreEl = document.getElementById("score");
+
+// let score = 0;
+// let currentWord = "";
+
+// function newWord() {
+//     const randomIndex = Math.floor(Math.random() * array.length);
+//     currentWord = array[randomIndex];
+//     wordEl.textContent = currentWord;
+//     typeEl.value = "";
+// }
+
+// typeEl.addEventListener("input", function() {
+//     if (typeEl.value === currentWord) {
+//         score++;
+//         scoreEl.textContent = score;
+//         newWord();
+//     }
+// });
+// scoreEl.textContent = score;
+// newWord();  
+
+// const countriesList = document.getElementById("countries");
+
+// for (let i = 0; i < array.length; i++) {
+//   const li = document.createElement("li");
+//   li.textContent = array[i];
+//   countriesList.appendChild(li);
+// }
+
+
+// const scrollEl = document.getElementById("scroll");
+// const bar = document.getElementById("bar");
+
+// window.addEventListener("scroll", function() {
+//     const y = window.scrollY;
+//     console.log("Scroll Y: " + y);
+//     scrollEl.textContent = "Scroll Y: " + y;
+
+//     const max = document.documentElement.scrollHeight - window.innerHeight;
+//     const percent = (y / max) * 100;
+//     bar.style.width = percent + "%";
+// });
+
+// btn.addEventListener("click", () => {
+//     alert("Button clicked!");
+// }, { once: true });
+
+//  const form = document.getElementById("myForm");
+//   const emailInput = document.getElementById("email");
+//   const websiteInput = document.getElementById("website");
+
+//   form.addEventListener("submit", (e) => {
+//     e.preventDefault(); // stops page refresh
+
+//     console.log("Current input value: " + emailInput.value);
+//     console.log("Current website input value: " + websiteInput.value);
+//   });
+
+//   const pw = document.getElementById("pw");
+//   const btn = document.getElementById("submitBtn");
+
+//   btn.addEventListener("click", (e) => {
+// if (pw.value.length < 6) {
+//     alert("Password must be at least 6 characters long.");
+//     e.preventDefault(); // prevent form submission
+// }
+// else{
+//     alert("Form submitted successfully!");
+// }
+//   });
+
+ 
+// update();
+
+const dt = document.getElementById("dt");
+const output = document.getElementById("iso");
+
+dt.addEventListener('change', function() {
+    const v = dt.value;
+    console.log("Selected date: " + v);
+    output.value=v;
+    
 });
-
-
-const array = ["Greece", "Malta", "Ireland", "Egypt", "Russia", "Spain", "Italy", "France", "Germany", "Portugal"];
-const wordEl = document.getElementById("word");
-const typeEl = document.getElementById("type");
-const scoreEl = document.getElementById("score");
-
-let score = 0;
-let currentWord = "";
-
-function newWord() {
-    const randomIndex = Math.floor(Math.random() * array.length);
-    currentWord = array[randomIndex];
-    wordEl.textContent = currentWord;
-    typeEl.value = "";
-}
-
-typeEl.addEventListener("input", function() {
-    if (typeEl.value === currentWord) {
-        score++;
-        scoreEl.textContent = score;
-        newWord();
-    }
-});
-scoreEl.textContent = score;
-newWord();  
-
-const countriesList = document.getElementById("countries");
-
-for (let i = 0; i < array.length; i++) {
-  const li = document.createElement("li");
-  li.textContent = array[i];
-  countriesList.appendChild(li);
-}
-
-
-const scrollEl = document.getElementById("scroll");
-const bar = document.getElementById("bar");
-
-window.addEventListener("scroll", function() {
-    const y = window.scrollY;
-    console.log("Scroll Y: " + y);
-    scrollEl.textContent = "Scroll Y: " + y;
-
-    const max = document.documentElement.scrollHeight - window.innerHeight;
-    const percent = (y / max) * 100;
-    bar.style.width = percent + "%";
-});
-
-btn.addEventListener("click", () => {
-    alert("Button clicked!");
-}, { once: true });
-
- const form = document.getElementById("myForm");
-  const emailInput = document.getElementById("email");
-  const websiteInput = document.getElementById("website");
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault(); // stops page refresh
-
-    console.log("Current input value: " + emailInput.value);
-    console.log("Current website input value: " + websiteInput.value);
-  });
-
-  const pw = document.getElementById("pw");
-  const btn = document.getElementById("submitBtn");
-
-  btn.addEventListener("click", (e) => {
-if (pw.value.length < 6) {
-    alert("Password must be at least 6 characters long.");
-    e.preventDefault(); // prevent form submission
-}
-else{
-    alert("Form submitted successfully!");
-}
-  });
-
-  const age = document.getElementById("age");
-  const output = document.getElementById("output");
-  const vol = document.getElementById("vol");
-function update(){
-    output.value = 'Age: ' + age.value + ', Volume: ' + vol.value;
-}
-
-age.addEventListener("input", update);
-vol.addEventListener("input", update);
-
-update();
