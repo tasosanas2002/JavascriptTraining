@@ -834,3 +834,15 @@ else{
     alert("Form submitted successfully!");
 }
   });
+
+  const age = document.getElementById("age");
+  const output = document.getElementById("output");
+  const vol = document.getElementById("vol");
+function update(){
+    output.value = 'Age: ' + age.value + ', Volume: ' + vol.value;
+}
+
+age.addEventListener("input", update);
+vol.addEventListener("input", update);
+
+update();
