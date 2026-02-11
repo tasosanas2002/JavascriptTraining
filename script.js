@@ -821,29 +821,19 @@
 //     console.log("Current input value: " + emailInput.value);
 //     console.log("Current website input value: " + websiteInput.value);
 //   });
+// const input = document.getElementById('files');
+//   const list = document.getElementById('list');
 
-//   const pw = document.getElementById("pw");
-//   const btn = document.getElementById("submitBtn");
+//   input.addEventListener('change', function () {
+//     list.innerHTML = ''; // Clear previous list
 
-//   btn.addEventListener("click", (e) => {
-// if (pw.value.length < 6) {
-//     alert("Password must be at least 6 characters long.");
-//     e.preventDefault(); // prevent form submission
-// }
-// else{
-//     alert("Form submitted successfully!");
-// }
+//     for (const file of this.files) {
+//       const li = document.createElement('li');
+
+//       // Convert bytes to KB (optional)
+//       const sizeKB = (file.size / 1024).toFixed(2);
+
+//       li.textContent = `Name: ${file.name} - Size: ${sizeKB} KB`;
+//       list.appendChild(li);
+//     }
 //   });
-
- 
-// update();
-
-const dt = document.getElementById("dt");
-const output = document.getElementById("iso");
-
-dt.addEventListener('change', function() {
-    const v = dt.value;
-    console.log("Selected date: " + v);
-    output.value=v;
-    
-});
