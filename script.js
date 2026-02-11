@@ -837,3 +837,15 @@
 //       list.appendChild(li);
 //     }
 //   });
+
+const input = document.getElementById("inputBox");
+const live = document.getElementById("live");
+const final = document.getElementById("final");
+
+input.addEventListener("input", () => {
+    live.textContent = "Live: " + input.value;
+});
+
+input.addEventListener("change", () => {
+    final.textContent = "Final: " + input.value;
+});
