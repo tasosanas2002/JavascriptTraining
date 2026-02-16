@@ -2,13 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Exercise 1 â€” Checkout + Live Pricing</title>
+  <title>Exercise 1 — Checkout + Live Pricing</title>
   <style>
     body {
       font-family: system-ui,
-      sans-serif;
-      padding: 24px;
-      background-color: #f3f7ff;
+      sans-serif; padding: 24px;
     }
     .grid {
       max-width: 820px;
@@ -63,7 +61,7 @@
 </head>
 <body>
 
-<h2 style="text-align: center">Exercise 1 â€” Checkout + Live Pricing</h2>
+<h2 style="text-align: center">Exercise 1 — Checkout + Live Pricing</h2>
 
 <div class="grid">
   <form id="form" class="card">
@@ -82,7 +80,7 @@
       <label>
         Delivery
         <select name="delivery" id="delivery" required>
-          <option value="">Chooseâ€¦</option>
+          <option value="">Choose…</option>
           <option value="pickup">Pickup</option>
           <option value="courier">Courier</option>
         </select>
@@ -91,7 +89,7 @@
       <label>
         Zone
         <select name="zone" id="zone" required>
-          <option value="">Chooseâ€¦</option>
+          <option value="">Choose…</option>
           <option value="A">Zone A (near)</option>
           <option value="B">Zone B (mid)</option>
           <option value="C">Zone C (far)</option>
@@ -101,73 +99,46 @@
 
     <label>
       Notes (optional)
-      <input name="notes" placeholder="Doorbell brokenâ€¦">
-      <span class="muted">Weâ€™ll show a summary on submit.</span>
+      <input name="notes" placeholder="Doorbell broken…">
+      <span class="muted">We’ll show a summary on submit.</span>
     </label>
 
     <button type="submit">Place order</button>
   </form>
 
   <div class="card">
-    <div class="price">Total: â‚¬<span id="total">0.00</span></div>
-    <p class="muted">Base: â‚¬<span id="base">12.00</span> + Shipping: â‚¬<span id="ship">0.00</span></p>
+    <div class="price">Total: €<span id="total">0.00</span></div>
+    <p class="muted">Base: €<span id="base">12.00</span> + Shipping: €<span id="ship">0.00</span></p>
     <hr>
     <strong>Submit output</strong>
-    <pre id="out">â€”</pre>
+    <pre id="out">—</pre>
   </div>
 </div>
 
 <script>
 const basePrice = 12;
-const form = document.getElementById("form");
-const deliverySelect = document.getElementById("delivery");
-const zoneSelect = document.getElementById("zone");
-const ship = document.getElementById("ship");
-const total = document.getElementById("total");
-const out = document.getElementById("out");
 
-const calcShipping = (delivery, zone) => {
+function calculateShipping(delivery, zone) {
   if (delivery === 'pickup') return 0;
   if (zone === 'A') return 3;
   if (zone === 'B') return 5;
-  if (zone === 'C') return 8;
+  if (zone === 'C') return 7;
   return 0;
-};
+}
 
-function updateTotal() {
-  const delivery = deliverySelect.value;
-  const zone = zoneSelect.value;
-  const shipping = calcShipping(delivery, zone);
+function updateTotals() {
+  const delivery = form.delivery.value;
+  const zone = form.zone.value;
+  const shipping = calculateShipping(delivery, zone);
   ship.textContent = shipping.toFixed(2);
   total.textContent = (basePrice + shipping).toFixed(2);
 }
 
-form.addEventListener("input", updateTotal);
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
+form.addEventListener('input', updateTotals);
 
-  const formData = new FormData(form);
-  const delivery = formData.get("delivery");
-  const zone = formData.get("zone");
-  const shipping = calcShipping(delivery, zone);
-  const totalPrice = basePrice + shipping;
 
-  const payload = {
-    fullName: formData.get("fullName") || "",
-    email: formData.get("email") || "",
-    delivery: delivery || "",
-    zone: zone || "",
-    notes: formData.get("notes") || "",
-    pricing: {
-      base: basePrice.toFixed(2),
-      shipping: shipping.toFixed(2),
-      total: totalPrice.toFixed(2)
-    },
-    submittedAt: new Date().toISOString()
-  };
 
-  out.textContent = JSON.stringify(payload, null, 2);
-});
+
 
 </script>
 
