@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Form</title>
+  <link rel="stylesheet" href="formcss.css" />
+</head>
+<body>
+
+<div class="container">
+
+  <!-- LEFT SIDE FORM -->
+  <div class="card">
+    <div class="form-row">
+      <div class="form-group">
+        <label>Full name</label>
+        <input type="text" id="name" placeholder="Maria Papadopoulou">
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" id="email" placeholder="name@example.com">
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label>Delivery</label>
+        <select id="delivery">
+          <option value="">Choose...</option>
+          <option value="standard">Standard</option>
+          <option value="express">Express</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Zone</label>
+        <select id="zone">
+          <option value="">Choose...</option>
+          <option value="0">Zone A (€0)</option>
+          <option value="3">Zone B (€3)</option>
+          <option value="5">Zone C (€5)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Notes (optional)</label>
+      <textarea id="notes" rows="3" placeholder="Doorbell broken..."></textarea>
+    </div>
+
+    <div class="small-text">We'll show a summary on submit.</div>
+
+    <button id="placeOrder">Place order</button>
+  </div>
+
+  <!-- RIGHT SIDE SUMMARY -->
+  <div class="card">
+    <div class="summary-title">
+      Total: €<span id="total">12.00</span>
+    </div>
+    <div>
+      Base: €12.00 + Shipping: €<span id="shipping">0.00</span>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="summary-title">Submit output</div>
+    <div class="output-box" id="output">-</div>
+  </div>
+
+</div>
+
+<script src="form.js"></script>
+</body>
+</html>
