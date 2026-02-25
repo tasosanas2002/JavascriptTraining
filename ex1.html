@@ -3,5 +3,12 @@
 <head>  
     <title>Document</title>
 </head>
-<scrit></scrit>
+<script>
+function fetchJSON(url) {
+  return fetch(url).then(function (res) {
+    if (!res.ok) throw new Error("HTTP " + res.status);
+    return res.json();
+  });
+}
+</script>
 </html>
