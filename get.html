@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Ex2 GET details</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding:16px; }
+    .row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+    .box { border:1px solid #ccc; padding:12px; margin:12px 0; }
+    input, textarea, button { padding:8px; }
+    ul { padding-left:18px; }
+    .muted { color:#666; }
+    .error { color:#b00020; }
+  </style>
+</head>
+<body>
+  <h2>Exercise 2: GET /posts + GET /posts/:id</h2>
+
+  <button id="loadBtn">Load titles</button>
+  <span id="status" class="muted"></span>
+
+  <div class="box">
+    <p class="muted">Click a title to load details:</p>
+    <ul id="list"></ul>
+  </div>
+
+  <div class="box">
+    <h3>Details</h3>
+    <div id="details" class="muted">No post selected.</div>
+  </div>
+
+  <script>
+    var API = "https://jsonplaceholder.typicode.com";
+    var loadBtn = document.getElementById("loadBtn");
+    var statusEl = document.getElementById("status");
+    var list = document.getElementById("list");
+    var details = document.getElementById("details");
+
+    function setStatus(text, isError) {
+      statusEl.textContent = text;
+      statusEl.className = isError ? "error" : "muted";
+    }
+
+    loadBtn.addEventListener("click", function () {
+      setStatus("Loading...", false);
+      list.innerHTML = "";
+      details.textContent = "No post selected.";
+
+      fetch(API + "/posts?_limit=8")
+        .then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          return res.json();
+        })
+        .then(function (posts) {
+          list.innerHTML = posts.map(function (p) {
+            return '<li><a href="#" data-id="' + p.id + '">' + p.title + "</a></li>";
+          }).join("");
+          setStatus("Loaded. Click a title.", false);
+        })
+        .catch(function (e) {
+          setStatus("Failed: " + e.message, true);
+        });
+    });
+
+    list.addEventListener("click", function (e) {
+      var a = e.target.closest("a");
+      if (!a) return;
+      e.preventDefault();
+
+      var id = a.getAttribute("data-id");
+      details.textContent = "Loading post #" + id + "...";
+
+      fetch(API + "/posts/" + id)
+        .then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          return res.json();
+        })
+        .then(function (post) {
+          details.innerHTML = "<b>" + post.title + "</b><p>" + post.body + "</p>";
+        })
+        .catch(function (err) {
+          details.textContent = "Failed: " + err.message;
+        });
+    });
+  </script>
+</body>
+</html>
