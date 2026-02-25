@@ -3,6 +3,26 @@
 <head>  
     <title>Document</title>
 </head>
+<body>
+    <h1>Fetch JSON</h1>
+    <button id="fetchBtn">Fetch Data</button>
+    <pre id="output"></pre>
+
+    <script>
+    var fetchBtn = document.getElementById("fetchBtn");
+    var output = document.getElementById("output");
+
+    fetchBtn.addEventListener("click", function () {
+      output.textContent = "Loading...";
+      fetchJSON("https://jsonplaceholder.typicode.com/posts/1")
+        .then(function (data) {
+          output.textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(function (err) {
+          output.textContent = "Error: " + err.message;
+        });
+    });
+    </script>
 <script>
 function fetchJSON(url) {
   return fetch(url).then(function (res) {
