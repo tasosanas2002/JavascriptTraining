@@ -1,19 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>  
-    <title>Document</title>
+<head>
+  <meta charset="utf-8" />
+  <title>Exercise 1 - Fetch JSON</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 16px; }
+    button { padding: 8px 12px; }
+    pre { background: #f6f6f6; border: 1px solid #ddd; padding: 12px; }
+  </style>
 </head>
 <body>
-    <h1>Fetch JSON</h1>
-    <button id="fetchBtn">Fetch Data</button>
-    <pre id="output"></pre>
+  <h1>Fetch JSON</h1>
+  <button id="fetchBtn">Fetch Data</button>
+  <pre id="output"></pre>
 
-    <script>
+  <script>
+    function fetchJSON(url) {
+      return fetch(url).then(function (res) {
+        if (!res.ok) throw new Error("HTTP " + res.status);
+        return res.json();
+      });
+    }
+
     var fetchBtn = document.getElementById("fetchBtn");
     var output = document.getElementById("output");
 
     fetchBtn.addEventListener("click", function () {
       output.textContent = "Loading...";
+
       fetchJSON("https://jsonplaceholder.typicode.com/posts/1")
         .then(function (data) {
           output.textContent = JSON.stringify(data, null, 2);
@@ -22,33 +36,6 @@
           output.textContent = "Error: " + err.message;
         });
     });
-    </script>
-<script>
-// function fetchJSON(url) {
-//   return fetch(url).then(function (res) {
-//     if (!res.ok) throw new Error("HTTP " + res.status);
-//     return res.json();
-//   });
-// }
-
-try{
-    const user = await fetchJSON("https://jsonplaceholder.typicode.com/users/");
-    console.log("User data:", user);
-    const post = await fetchJSON("https://jsonplaceholder.typicode.com/posts/1");
-   
-
-};
-
-console.log("Post count:", post.length);
-catch(err){
-    console.error("Error fetching data:", err);
-}
-console.log("First Post:", post[0]);
-console.log("All posts",posts)
-
-return post.json();
-} catch(err){
-    console.error("Error fetching data:", err);
-}
-</script>
+  </script>
+</body>
 </html>
