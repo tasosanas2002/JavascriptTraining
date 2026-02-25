@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Ex4 PUT</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding:16px; }
+    .row { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+    .box { border:1px solid #ccc; padding:12px; margin:12px 0; }
+    input, textarea, button { padding:8px; }
+    textarea { width:100%; height:70px; }
+    .muted { color:#666; }
+    .error { color:#b00020; }
+  </style>
+</head>
+<body>
+  <h2>Exercise 4: PUT /posts/:id</h2>
+
+  <div class="box">
+    <form id="form">
+      <div class="row">
+        <input id="id" type="number" min="1" value="1" placeholder="post id" />
+        <input id="title" placeholder="title" />
+        <button>Update</button>
+      </div>
+      <p class="muted">Body:</p>
+      <textarea id="body" placeholder="body"></textarea>
+    </form>
+    <p id="status" class="muted"></p>
+  </div>
+
+  <div class="box">
+    <h3>Server response</h3>
+    <pre id="out" class="muted"></pre>
+  </div>
+
+  <script>
+    var API = "https://jsonplaceholder.typicode.com";
+    var form = document.getElementById("form");
+    var idEl = document.getElementById("id");
+    var titleEl = document.getElementById("title");
+    var bodyEl = document.getElementById("body");
+    var statusEl = document.getElementById("status");
+    var out = document.getElementById("out");
+
+    function setStatus(text, isError) {
+      statusEl.textContent = text;
+      statusEl.className = isError ? "error" : "muted";
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      var id = Number(idEl.value);
+      if (!id || id < 1) {
+        setStatus("Please enter a valid post id.", true);
+        return;
+      }
+
+      out.textContent = "";
+
+      fetch(API + "/posts/" + id, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json; charset=UTF-8" },
+        body: JSON.stringify({
+          id: id,
+          title: titleEl.value,
+          body: bodyEl.value,
+          userId: 1
+        })
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("HTTP " + res.status);
+          return res.json();
+        })
+        .then(function (data) {
+          setStatus("Updated! (JSONPlaceholder fakes persistence)", false);
+          out.textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(function (err) {
+          setStatus("Failed: " + err.message, true);
+        });
+    });
+  </script>
+</body>
+</html>
